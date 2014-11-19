@@ -9,7 +9,7 @@
     hasAce && editor.getSession().setMode("ace/mode/javascript");
 
     function initMap() {
-        var i, j, size = 50;
+        var i, j, size = 100;
         map = [];
         iteration = 0;
         for (i = 0; i < size; i++) {
@@ -39,7 +39,7 @@
         step();
         setTimeout(function() {
             running && run();
-        }, 500);
+        }, 50);
     }
 
     function stop() {
