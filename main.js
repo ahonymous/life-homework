@@ -10,11 +10,29 @@
 
     function initMap() {
         var i, j, size = 100;
+        //var  x, y = 5,
+        //    plane = [
+            //    [true, true, true],
+            //    [false, false, true],
+            //    [false, true, false]
+            //],
+            //plane1 = [];
         map = [];
         iteration = 0;
         for (i = 0; i < size; i++) {
             map[i] = [];
+            //if (!(i % y)) {
+            //    plane1 = plane.map(function (val) {
+            //        return val.slice(0, val.length);
+            //    });
+            //}
+            //
+            //if (plane1.length) {
+            //    x = plane1.pop();
+            //}
+
             for (j = 0; j < size; j++) {
+                //map[i][j] = x.length ? x.pop() : false;
                 map[i][j] = Math.random() > 0.5;
             }
         }
