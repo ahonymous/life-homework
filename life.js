@@ -8,21 +8,19 @@ var game = function (map) {
     }
 
     var lives = function (x, y) {
-        var m = (x - 1 in map) ? x - 1 : x,
-            n = (y - 1 in map[m]) ? y - 1 : y,
+        var m = [(x - 1) < 0 ? map.length - 1 :  x - 1, x, (x + 1) == map.length ? 0 : x + 1],
+            n = [(y - 1) < 0 ? map[x].length - 1 : y - 1, y, (y + 1) == map[x].length ? 0 : y + 1],
             lives = 0,
             k, l;
 
-        for (k = m; k < (x + 2); k++) {
-            if (k in map) {
-                for (l = n; l < (y + 2); l++) {
-                    if ((k == x && l == y) || !(l in map[k])) {
-                        continue;
-                    }
+        for (k = 0; k <= 2; k++) {
+            for (l = 0; l <= 2; l++) {
+                if (m[k] == x && n[l] == y) {
+                    continue;
+                }
 
-                    if (map[k][l] === true) {
-                        lives++;
-                    }
+                if (map[m[k]][n[l]]) {
+                    lives++;
                 }
             }
         }
