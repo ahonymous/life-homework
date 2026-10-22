@@ -3,11 +3,11 @@ Array.prototype.max = function () {
 };
 
 var cups = function (wall) {
-    var i,
+    let i,
         smallSquare,
         max = wall.indexOf(wall.max()),
         getCups = function (smallWall) {
-            var out = [{
+            let out = [{
                 start: 0,
                 end: 0,
                 square: 0
@@ -48,9 +48,9 @@ var cups = function (wall) {
     return smallSquare;
 };
 
-var arr = [];
-var tt = function () {
-    var i = [5, 4];
+let arr = [];
+let tt = function () {
+    let i = [5, 4];
     arr.push(i.pop());
 
     console.log(arr, i);

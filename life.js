@@ -1,5 +1,5 @@
 var game = function (map) {
-    var out = [],
+    let out = [],
         i, j, s,
         countLives = 0;
 
@@ -7,8 +7,8 @@ var game = function (map) {
         out.push([]);
     }
 
-    var lives = function (x, y) {
-        var m = [(x - 1) < 0 ? map.length - 1 :  x - 1, x, (x + 1) == map.length ? 0 : x + 1],
+    let lives = function (x, y) {
+        let m = [(x - 1) < 0 ? map.length - 1 :  x - 1, x, (x + 1) == map.length ? 0 : x + 1],
             n = [(y - 1) < 0 ? map[x].length - 1 : y - 1, y, (y + 1) == map[x].length ? 0 : y + 1],
             lives = 0,
             k, l;
